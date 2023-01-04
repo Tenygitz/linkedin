@@ -1,0 +1,5 @@
+.Main-body{
+    display: flex;
+    background-color: rgba(240, 234, 234, 0.986);
+    padding-left: 100px;
+  }

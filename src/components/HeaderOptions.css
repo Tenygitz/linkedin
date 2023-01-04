@@ -1,0 +1,21 @@
+.HeaderOptions>h1 {
+    font-size: 18px;
+}
+.HeaderOptions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    cursor: pointer;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.HeaderOptions:hover{
+    color: black;
+}
+.avatarImg{
+    object-fit: contain;
+    height: 25px !important;
+    width: 30px !important;
+}

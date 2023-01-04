@@ -1,0 +1,16 @@
+.FeedOptions{
+    display: flex;
+    align-items: center;
+    gap :20px;
+    cursor: pointer;
+}
+.FeedOptions>p{
+    color: grey;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.FeedOptions:hover{
+    background-color: whitesmoke;
+    border-radius: 10px;
+   
+}

@@ -1,0 +1,32 @@
+.Post{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.post-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.post-info{
+    margin-left: 10px;
+}
+.post-info>h5{
+    color: grey;
+    font-size: 14px;
+    font-weight: 400;
+}
+.post-info>h1{
+    font-size: 20px;
+    color: rgba(68, 67, 67, 0.925);
+}
+.post-body{
+    overflow-wrap:anywhere;
+}
+.post-button{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}

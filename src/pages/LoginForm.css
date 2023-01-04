@@ -1,0 +1,45 @@
+.LoginForm{
+    display: flex;
+    justify-content: space-around;
+}
+.loginform-img>img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.loginform-input>h1{
+    font-size: 52px;
+    font-weight: 200;
+    color:#8f5849;
+
+}
+.loginform-input{
+    margin-left: 100px;
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 20px;
+}
+.forms>input{
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.forms>button{
+    padding: 20px 20px;
+    border-radius: 50px;
+    background-color: #0073b1;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+.loginform-input>h4{
+    margin-left: 50px;
+    margin-top: 5px;
+  
+}

@@ -1,0 +1,52 @@
+.SignOut{
+    position: absolute;
+    top :95px;
+    right: 400px;
+    z-index: 999 ;
+
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+   
+    padding:20px;
+    width: 250px;
+    background-color: white;
+    box-shadow: 10px;
+  
+}
+.signout-avatar{
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.SignOut>button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #0073b1;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #0073b1;
+    font-weight: 700;
+    cursor: pointer;
+}
+.SignOut>button:hover{
+    background-color: whitesmoke;
+}
+.premium{
+    display: flex;
+ align-items: center;
+    gap:20px
+}
+.paymenticon{
+   
+    background-color: sandybrown;
+}
+.SignOut>h4{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.signout-font{
+    font-weight: 400;
+}

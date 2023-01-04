@@ -1,0 +1,72 @@
+.CreatePost{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba(29, 28, 28, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+   
+}
+.createpost-container{
+        background-color: white;
+        width: 500px;
+        height: 400px;
+        overflow: scroll ;
+        border-radius: 10px;
+        padding: 20px;
+        flex-direction: column;
+}
+.createpost-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.createpost-content{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.uploadImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+textarea{
+    width: 100%;
+    height: 200px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+.createpost-action{
+    display: flex;
+    justify-content: space-between;
+  
+}
+.postBtn{
+    padding: 5px 15px;
+    border-radius: 50px;
+    background-color: #0073b1;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.closebtn{
+    cursor: pointer;
+   
+}
+
+
+
+    

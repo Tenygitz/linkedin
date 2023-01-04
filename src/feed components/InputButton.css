@@ -1,0 +1,11 @@
+.InputButton{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+   
+}
+.InputButton:hover{
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
