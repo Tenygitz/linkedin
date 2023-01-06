@@ -60,8 +60,8 @@ function Feed() {
        </div>
      </div>
      <FlipMove>
-     {posts.map(({id, data :{name,email,message,photo}})=>{
-          return <Post key={id} name={name} describe={email} message={message} photo={photo}/>
+     {posts?.map(({id, data :{name,email,message,photo,images,video}})=>{
+          return <Post key={id} name={name} describe={email} message={message} photo={photo} images={images} video={video}/>
 })}
      </FlipMove>
     </div>

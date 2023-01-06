@@ -10,37 +10,52 @@ import { db } from '../firebase';
 import ReactPlayer from 'react-player';
 import {storage} from "../firebase";
 import {  ref, uploadBytesResumable,getDownloadURL } from "firebase/storage";
+import {v4} from "uuid"
 
 function CreatePost({setOpen,setPosts}) {
     const {user}=useSelector((state)=>state.user)
     const [input,setInput]= useState("")
     const [image, setImage] = useState(null);
-    const [video,setVideo]=useState("")
+    const [video,setVideo]=useState(null)
+    
+    
    
     console.log('ddd',typeof posts)
+    console.log('picture',image)
     
 
     const sendPost=async(e)=>{
         e.preventDefault();
+        
        
         
-          const storageRef = ref(storage,`image`);
+        const storageRef = ref(storage,`images/${image?.name + v4()}`);
+        const videoRef = ref(storage,`videos/${video?.name + v4()}`);
+      
+        await uploadBytesResumable(storageRef, image)
+          await uploadBytesResumable(videoRef, video)
          
-          await uploadBytesResumable(storageRef, image).then(() => {
-            getDownloadURL(storageRef).then(async (downloadURL) => {
-            })})
-     
+
+          const imageDownloadURL = await getDownloadURL(storageRef);
+          const videoDownloadURL = await getDownloadURL(videoRef);
+         
+        
+          
+           
         const docRef = await addDoc(collection(db, "posts"),{
           name:user.displayName,
           email:user.email,
           message:input,
+          images:imageDownloadURL,
+          video:videoDownloadURL,
           photo:user.photoURL,
           timestamp:serverTimestamp(),
         },orderBy("timestamp","dec"))
         console.log(docRef);
         setPosts(" ")
                
-        
+    
+     
         
        }
     
@@ -61,17 +76,20 @@ function CreatePost({setOpen,setPosts}) {
        </div>
        <form  >
         <textarea value={input} onChange={(e)=>setInput(e.target.value)} placeholder='what do you want to talk about?'></textarea>
-        <input   type="file"style={{display:"none"}} id="file"  onChange={(e) => setImage(e.target.files[0])}/>
+        <input   type="file"  id="file" style={{display:"none"}} onChange={(e) => setImage(e.target.files[0])}/>
         <p> <label htmlFor='file'>Select the image</label></p>
         {
-          image && <img className='uploadImg' src={URL.createObjectURL(image)} alt="image-upload"/>
-        }
+         image && <img className='uploadImg' src={URL.createObjectURL(image)} alt="image-upload"/>}
+         
+        
         <>
-        <input  value={video} type="text" id="video"placeholder='Enter the url link'  onChange={(e) => setVideo(e.target.value)}/>
-        {
-          video && <ReactPlayer width={"100%"} heigth={"200px"}url={video}/>
-        }
-        </>
+        <input type="file"  id="video"placeholder='upload video'  onChange={(e) => setVideo(e.target.files[0])}/>
+        
+        { video &&
+           <video controls  width={"100%"} heigth={"200px"} src={URL.createObjectURL(video)} />}
+        
+       
+       </>
        
        <div className='createpost-action'>
         <div className='createpost-icon'>
