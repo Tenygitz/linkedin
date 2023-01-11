@@ -7,7 +7,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { useSelector } from 'react-redux';
 import { collection, addDoc , orderBy,serverTimestamp} from "firebase/firestore";
 import { db } from '../firebase';
-import ReactPlayer from 'react-player';
 import {storage} from "../firebase";
 import {  ref, uploadBytesResumable,getDownloadURL } from "firebase/storage";
 import {v4} from "uuid"
@@ -27,33 +26,39 @@ function CreatePost({setOpen,setPosts}) {
     const sendPost=async(e)=>{
         e.preventDefault();
         
-       
-        
-        const storageRef = ref(storage,`images/${image?.name + v4()}`);
-        const videoRef = ref(storage,`videos/${video?.name + v4()}`);
-      
-        await uploadBytesResumable(storageRef, image)
-          await uploadBytesResumable(videoRef, video)
-         
-
+        if (image) {
+          const storageRef = ref(storage,`images/${image.name + v4()}`);
+          await uploadBytesResumable(storageRef, image);
           const imageDownloadURL = await getDownloadURL(storageRef);
-          const videoDownloadURL = await getDownloadURL(videoRef);
-         
-        
+          const docRef = await addDoc(collection(db, "posts"),{
+            name:user.displayName,
+            email:user.email,
+            message:input,
+            images:imageDownloadURL,
+            photo:user.photoURL,
+            timestamp:serverTimestamp(),
+          },orderBy("timestamp","dec"))
+          console.log(docRef);
+          setPosts(" ")
           
-           
-        const docRef = await addDoc(collection(db, "posts"),{
-          name:user.displayName,
-          email:user.email,
-          message:input,
-          images:imageDownloadURL,
-          video:videoDownloadURL,
-          photo:user.photoURL,
-          timestamp:serverTimestamp(),
-        },orderBy("timestamp","dec"))
-        console.log(docRef);
-        setPosts(" ")
-               
+        } else if (video) {
+          const videoRef = ref(storage,`videos/${video.name + v4()}`);
+          await uploadBytesResumable(videoRef, video);
+          const videoDownloadURL = await getDownloadURL(videoRef);
+        
+          const docRef = await addDoc(collection(db, "posts"),{
+            name:user.displayName,
+            email:user.email,
+            message:input,
+            video:videoDownloadURL,
+            photo:user.photoURL,
+            timestamp:serverTimestamp(),
+          },orderBy("timestamp","dec"))
+          console.log(docRef);
+          setPosts(" ")
+        }
+        
+       
     
      
         

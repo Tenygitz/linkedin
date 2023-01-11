@@ -39,12 +39,15 @@
 .header-middle{
     display: flex;
     margin-left: 70px;
+   
 }
 .work{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
+    
+   
 }
 .header-right{
     display: flex;

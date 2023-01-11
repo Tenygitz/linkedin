@@ -23,10 +23,12 @@ const Post= forwardRef(({name,describe,message,photo,images,video},ref) =>{
         </div>
         <div className="post-body">
             <p>{message}</p>
-             <img src={images} alt="images"/>
-             <video controls autoPlay={false} src={video} alt="video"  />
-             
-             
+            {  images?(  
+             <img src={images} alt="images"/>):null
+             }
+             { video? (
+             <video controls autoPlay={false} src={video} alt="video"  />):null
+            }
             </div>
             <div className="post-button">
                 <InputButton Icon={ThumbUpIcon} title="Likes"/>

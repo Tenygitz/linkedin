@@ -54,6 +54,7 @@
     width: 90px !important;
     height: 80px !important;
     object-fit: cover;
+    border: 2px solid white;
 }
 .sideBar-bottom{
     text-align: left;
@@ -65,8 +66,7 @@
     margin-bottom: 10px;
 }
 .sideBar-recentItem{
-    display: flex;
-    
+    display: flex;  
     color: grey;
     font-weight: bolder;
     cursor: pointer;

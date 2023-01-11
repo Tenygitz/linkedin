@@ -31,7 +31,19 @@ function Widget() {
      {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
      {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
      {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
-
+     <div className='Widget-img'>
+      <img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" />
+     </div>
+     <div className='Footer'>
+      <span>About</span> <span>Accebility</span> <span>Help Center</span><br/>
+      <span>Privacy & Terms</span> <span>Ad Choices</span><br/>
+      <span>Advertising</span> <span>Business Services </span><br/>
+      <span>Get the LinkedIn app</span> 
+      <div className='Footer-end'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png"/>
+        <p>LinkedIn Corporation © 2023</p>
+      </div>
+     </div>
     </div>
   )
 }

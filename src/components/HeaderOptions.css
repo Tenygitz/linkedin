@@ -15,7 +15,7 @@
     color: black;
 }
 .avatarImg{
-    object-fit: contain;
+    object-fit:scale-down;
     height: 25px !important;
     width: 30px !important;
 }
