@@ -25,7 +25,6 @@ function SignOut() {
     <div className='SignOut'>
         <div className='signout-avatar'>
           <Avatar src={user?.photoURL}>{user.email[0]}</Avatar>
-        
         <div className='signout-info'>
             <h3>{user.displayName}</h3>
             <h4 className='signout-font'>{user.email}</h4>

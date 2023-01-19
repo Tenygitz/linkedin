@@ -5,18 +5,22 @@
     max-width: 300px;
     margin-top: 20px;
     padding: 10px;
-    height: 350px;
+    height: 300px;
 }
 .widget-Header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 5px;
 }
 .widget-article{
     display: flex;
 }
 .widget-article:hover{
  background-color: whitesmoke;
+}
+.widget-article-right>h3{
+    font-size: 17px;
 }
 .widget-Header>h1{
     font-size: 18px;
@@ -34,7 +38,7 @@
 }
 .Widget-img{
     border: 1px solid lightgray;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;

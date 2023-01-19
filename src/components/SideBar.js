@@ -9,7 +9,6 @@ function SideBar() {
 
   const recentItem=(topic)=>(
     <div className='sideBar-recentItem'>
-     
       <span className='sideBar-hash'>#</span>
       <p>{topic}</p>
     </div>
@@ -28,7 +27,6 @@ function SideBar() {
         <div className='sideBar-stat'>
           <p>Who Viewed Your Profile</p>
           <p className='sideBar-stat-number'>44355</p>
-
         </div>
         <div className='sideBar-stat'>
         <p>Viewed Your Post</p>

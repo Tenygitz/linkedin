@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
-import "./Feed.css";
 import CreateIcon from '@mui/icons-material/Create';
 import { Avatar } from '@mui/material';
+import { orderBy} from "firebase/firestore";
 import FeedOptions from '../feed components/FeedOptions';
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -13,6 +13,7 @@ import {useSelector} from"react-redux";
 import { collection, getDocs} from "firebase/firestore"; 
 import FlipMove from 'react-flip-move';
 import CreatePost from '../feed components/CreatePost';
+import "./Feed.css";
 
 
 function Feed() {
@@ -21,12 +22,16 @@ function Feed() {
   const [posts,setPosts]=useState([])
   
   console.log('ddd',typeof posts)
+  
 
   useEffect(() => {
     const fetchData = async () => {
-      const querySnapshot = await getDocs(collection(db, "posts"));
+      const querySnapshot = await getDocs(collection(db, "posts"),
+      orderBy("timestamp","dec"));
       querySnapshot.forEach((doc) =>
+      
         setPosts(prevPosts => [...prevPosts, { id: doc.id, data: doc.data() }])
+        
       );
     };
     fetchData();
@@ -50,7 +55,7 @@ function Feed() {
       </div>
       </div>{
         open &&<CreatePost setOpen={setOpen} setPosts={setPosts} />
-      }
+            }
       
        <div className='Feed-upload'>
         <FeedOptions Icon={PhotoSizeSelectActualIcon} title="Photo" color="#378fe9"/>
@@ -60,9 +65,9 @@ function Feed() {
        </div>
      </div>
      <FlipMove>
-     {posts?.map(({id, data :{name,email,message,photo,images,video}})=>{
-          return <Post key={id} name={name} describe={email} message={message} photo={photo} images={images} video={video}/>
-})}
+     { posts && posts.map(({id, data :{name,email,message,photo,images,video ,timestamp}})=>{
+          return <Post id={id} name={name} describe={email} message={message} photo={photo} images={images} video={video}timestamp={timestamp} />
+      })}   
      </FlipMove>
     </div>
   )

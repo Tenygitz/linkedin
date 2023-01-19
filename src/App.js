@@ -1,5 +1,3 @@
-
-import './App.css';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Main from './Main';
@@ -8,7 +6,8 @@ import Register from './Register';
 import { useEffect } from 'react';
 import {useSelector} from"react-redux";
 import {useDispatch} from"react-redux";
-import {login,logout} from "./redux/userSlice"
+import {login,logout} from "./redux/userSlice";
+import './App.css';
 
 function App() {
   const {user}=useSelector((state)=>state.user)
@@ -17,30 +16,27 @@ function App() {
 
   useEffect(() => {
     const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
     const uid = user.uid;
     dispatch(login({
               uid:user.uid,
               displayName:user.displayName,
               email:user.email,
               photoURL:user.photoURL,
-    }))
-  } else {
+                  }))
+    } else {
     // User is signed out
     dispatch(logout())
-  }
-});
+    }
+  });
   }, [])
   
  
   return (
     <BrowserRouter>
     <div className="App">
-    
     <Routes>
-      
     <Route path="/" element={<Login/>}/>
     <Route path="register" element={<Register/>}/>
     <Route path="home" element={<Main/>}/>

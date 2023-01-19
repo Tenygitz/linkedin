@@ -1,10 +1,10 @@
 import React from 'react';
-import "./LoginPage.css";
 import ExploreIcon from '@mui/icons-material/Explore';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import CastForEducationIcon from '@mui/icons-material/CastForEducation';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import { useNavigate } from 'react-router-dom';
+import "./LoginPage.css";
 
 function LoginPage() {
   const navigate=useNavigate()
@@ -34,8 +34,6 @@ function LoginPage() {
             <h1>Join Now</h1>
             <button onClick={()=>navigate("/")}className="signINBtn">Sign In</button>
         </div>
-        
-
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
-import "./LoginForm.css";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import "./LoginForm.css";
 
 function LoginForm() {
   const navigate=useNavigate()
@@ -11,8 +11,8 @@ function LoginForm() {
   const loginHandler=(e)=>{
     e.preventDefault()
     const auth = getAuth();
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
     // Signed in 
     const user= userCredential.user;
     // ...

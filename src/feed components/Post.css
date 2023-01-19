@@ -29,6 +29,10 @@
     display:flex;
     justify-content: space-around;
     margin-top: 10px;
+    margin-bottom: 5px;
+}
+.post-buttonNumbers{
+    margin-top: 10px;
 }
 .post-body>img{
  width: 100%;
@@ -41,4 +45,57 @@
     height: 100%;
     margin-top: 10px;
     border-radius:10px
+}
+.post-buttonNumbers{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.LikesButton{
+    font-size: 19px !important;
+    background-color: #9edcfd;
+    padding: 3px;
+    border-radius: 10px;
+  
+}
+.post-buttonLikes{
+    display: flex;
+    align-items: center;
+}
+.Comment-input{
+    display: flex;
+    gap:20px
+}
+form>input{
+    border-radius: 30px;
+    padding: 10px;
+    width: 100% !important;
+}
+.Comment-container{
+    margin-top: 10px;
+}
+.Comment-info{
+    display: flex;
+    gap:10px;
+    margin-top: 10px;
+    
+}
+.Comment-infoItems{
+ 
+    
+}
+.Comment-infoItems>p{
+    margin-top: 10px;
+}
+.Comment-infoContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ebeef0;
+    width: 500px ;
+    max-height: 200px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
 }

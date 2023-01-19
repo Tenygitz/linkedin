@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Widget.css";
 import InfoIcon from '@mui/icons-material/Info';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import "./Widget.css";
 
 
 function Widget() {
@@ -13,9 +13,7 @@ function Widget() {
       <div className="widget-article-right">
         <h3>{heading}</h3>
         <p>{subtitle}</p>
-      
-      </div>
-        
+      </div>   
     </div>
   )
 
@@ -26,11 +24,11 @@ function Widget() {
         <h1>Linkedin News</h1>
         <InfoIcon className='widget-icon'/>
       </div>
-     {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
-     {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
-     {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
-     {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
-     {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
+          {newsArticle("10 big ideas that will shape you in 2023","top news. 34,555 readers")}
+          {newsArticle("Metaverse to redefine consumer experience ?","top news. 34,555 readers")}
+          {newsArticle("Top IT firms clock robust profits","top news. 34,555 readers")}
+          {newsArticle("How to compile a resume?","top news. 34,555 readers")}
+          {newsArticle("Hybrid work spikes cyber threats","top news. 34,555 readers")}
      <div className='Widget-img'>
       <img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" />
      </div>
