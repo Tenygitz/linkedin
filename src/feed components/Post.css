@@ -67,10 +67,10 @@
     display: flex;
     gap:20px
 }
-form>input{
+.Comment-inputField>input{
     border-radius: 30px;
     padding: 10px;
-    width: 100% !important;
+    width: 100% ;
 }
 .Comment-container{
     margin-top: 10px;
@@ -81,10 +81,7 @@ form>input{
     margin-top: 10px;
     
 }
-.Comment-infoItems{
- 
-    
-}
+
 .Comment-infoItems>p{
     margin-top: 10px;
 }

@@ -29,7 +29,6 @@ function LoginPage() {
             <h1>Jobs</h1>
         </div>
         </div>
-        <hr></hr>
         <div className='nav-icon-right'>
             <h1>Join Now</h1>
             <button onClick={()=>navigate("/")}className="signINBtn">Sign In</button>

@@ -44,7 +44,7 @@ function Feed() {
     <div className='Feed'>
      <div className='Feed-container'>
       <div className='Feed-containers'>
-      <Avatar src={user.photoURL}></Avatar>
+      <Avatar src={user?.photoURL}></Avatar>
     
       <div className='Feed-input'>
         <CreateIcon/>
@@ -65,7 +65,7 @@ function Feed() {
        </div>
      </div>
      <FlipMove>
-     { posts && posts.map(({id, data :{name,email,message,photo,images,video ,timestamp}})=>{
+     { posts?.map(({id, data :{name,email,message,photo,images,video ,timestamp}})=>{
           return <Post id={id} name={name} describe={email} message={message} photo={photo} images={images} video={video}timestamp={timestamp} />
       })}   
      </FlipMove>
