@@ -1,0 +1,27 @@
+.Footers-end>img{
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+}
+.Footers-end{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.Footers>span{
+    padding: 15px;
+    
+    font-size: 14px;
+    color: grey;
+
+}
+.Footers>span:hover{
+    color: #0073b1;
+}
+.Footers{
+    text-align: center;
+    margin-top: 20px;
+    
+  
+}

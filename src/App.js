@@ -8,6 +8,7 @@ import {useSelector} from"react-redux";
 import {useDispatch} from"react-redux";
 import {login,logout} from "./redux/userSlice";
 import './App.css';
+import OverView from "./OverView";
 
 function App() {
   const {user}=useSelector((state)=>state.user)
@@ -40,6 +41,7 @@ function App() {
     <Route path="/" element={<Login/>}/>
     <Route path="register" element={<Register/>}/>
     <Route path="home" element={<Main/>}/>
+    <Route path="overview" element={<OverView/>}/>
     </Routes>
     </div>
     </BrowserRouter>

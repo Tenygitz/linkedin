@@ -18,13 +18,14 @@ function CreatePost({setOpen,setPosts}) {
     const [video,setVideo]=useState(null)
     const [asset,setAsset]= useState("")
     
+    
     console.log('ddd',typeof posts)
     console.log('picture',image)
     
     const switchComp=(area)=>{
        setAsset(area)
     } 
-
+  
     const sendPost=async(e)=>{
         e.preventDefault();
         
@@ -70,10 +71,10 @@ function CreatePost({setOpen,setPosts}) {
        </div>
        <hr/>
        <div className='createpost-content'>
-        <Avatar src={user.photoURL}>{user?.email[0]}</Avatar>
+        <Avatar src={user?.photoURL}>{user?.email[0]}</Avatar>
         <div className='createpost-info'>
-                <h3>{user.displayName}</h3>
-                <h5>{user.email}</h5>
+                <h3>{user?.displayName}</h3>
+                <h5>{user?.email}</h5>
             </div>
        </div>
        <form  >
@@ -95,8 +96,10 @@ function CreatePost({setOpen,setPosts}) {
        
        <div className='createpost-action'>
         <div className='createpost-icon'>
+        
         <label htmlFor='file'>
        <PhotoSizeSelectActualIcon style={{color:"#378fe9"}} onClick={()=>switchComp("image") }/> </label>
+       
         <label htmlFor='video'>
        <YouTubeIcon style={{color:"#5f9b41"}} onClick={()=>switchComp("video")}/></label></div>
        <button type='submit'  onClick={sendPost } className='postBtn'>Post</button>

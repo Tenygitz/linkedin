@@ -3,6 +3,8 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
+import FooterMain from './FooterMain';
+import Footer from './Footer';
 
 function LoginForm() {
   const navigate=useNavigate()
@@ -23,7 +25,7 @@ function LoginForm() {
   });
 
   }
-  return (
+  return (<>
     <div className='LoginForm'>
         <div className='loginform-input'>
             <h1>Welcome to your professional community</h1>
@@ -37,8 +39,11 @@ function LoginForm() {
         <div className='loginform-img'>
             <img src="https://edportal.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/hep/files/linkedin_flex.png?m=1641489819&itok=EO6Uk51B" alt='img'/>
         </div>
-
+       
     </div>
+    <FooterMain/>
+    <Footer/>
+    </>
   )
 }
 

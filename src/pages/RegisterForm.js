@@ -10,6 +10,7 @@ import {useDispatch} from"react-redux";
 import {login} from "../redux/userSlice"
 import LoginPage from './LoginPage';
 import "./RegisterForm.css"
+import Footer from './Footer';
 
 function RegisterForm() {
   const dispatch=useDispatch()
@@ -79,6 +80,7 @@ function RegisterForm() {
         </form>
     </div>
     </div>
+    <Footer/>
     </>
   )
 }

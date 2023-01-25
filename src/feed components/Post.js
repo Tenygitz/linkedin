@@ -9,6 +9,8 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import MessageIcon from '@mui/icons-material/Message';
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import SendIcon from '@mui/icons-material/Send';
+import { useNavigate } from 'react-router-dom';
+
 import "./Post.css";
 
 const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},ref) =>{
@@ -18,6 +20,7 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
   const [commend,SetCommend] =useState(false)
   const [commendValue,setCommendValue]=useState([])
   const [inputCommend,setInputCommend]= useState("")
+  const navigate=useNavigate()
 
   console.log("com ",inputCommend)
 
@@ -83,7 +86,7 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
   return (
     <div ref={ref} key={id} className='Post'>
         <div className='post-header'>
-            <Avatar src={photo}>{user?.email[0]}</Avatar>
+            <Avatar onClick={()=>navigate("/overview")} src={photo}>{user?.email[0]}</Avatar>
             <div className='post-info'>
                 <h1>{name}</h1>
                 <h5>{describe}</h5>
@@ -120,13 +123,13 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
             </div>{ commend &&
             <div className='Comment-container'>
               <div className='Comment-input'>
-            <Avatar src={user?.photoURL}>{user.email[0]} </Avatar>
+            <Avatar src={user?.photoURL}>{user?.email[0]} </Avatar>
             <form className="Comment-inputField" onSubmit={onSubmitCommend}>
-              <input value={inputCommend}   onChange={(e)=>setInputCommend(e.target.value)} type="text" placeholder='Add a Commend...'/>
+              <input className='inputfields-comment' value={inputCommend}   onChange={(e)=>setInputCommend(e.target.value)} type="text" placeholder='Add a Commend...'/>
               </form>
               </div>
-              { commendValue.length>0 && commendValue.map((item)=>(<div className='Comment-info'>
-               <Avatar  key={item.id} src={item.data().photo}></Avatar>
+              { commendValue.length>0 && commendValue.map((item)=>(<div key={item.id} className='Comment-info'>
+               <Avatar   src={item.data().photo}></Avatar>
                <div className='Comment-infoContainer'>
               <div className='Comment-infoItems'>
                 <h3>{item.data().name}</h3>

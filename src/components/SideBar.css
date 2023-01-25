@@ -57,6 +57,8 @@
     border: 2px solid white;
 }
 .sideBar-bottom{
+    position: sticky;
+    top:10px;
     text-align: left;
     border: 1px solid lightgray;
     margin-top: 10px;

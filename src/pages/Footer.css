@@ -1,0 +1,21 @@
+.Footer-infos>img{
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+    
+}
+.Footer-infos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Footer>span{
+    padding: 10px;
+    font-weight: 500;
+}

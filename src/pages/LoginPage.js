@@ -10,7 +10,7 @@ function LoginPage() {
   const navigate=useNavigate()
   return (
     <div className='LoginPage'>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png" alt="logo"/>
+        <img onClick={()=>navigate("/")}src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png" alt="logo"/>
         <div className='nav-icon-middle'>
         <div className='nav-icon'>
           <ExploreIcon className="nav-icons"/>

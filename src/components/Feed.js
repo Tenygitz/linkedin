@@ -46,11 +46,11 @@ function Feed() {
       <div className='Feed-containers'>
       <Avatar src={user?.photoURL}></Avatar>
     
-      <div className='Feed-input'>
+      <div className='Feed-input' style={{ backgroundColor: "rgba(240, 234, 234, 0.986)"}}>
         <CreateIcon/>
         <form>
-          <input type="text" onClick={()=>setOpen(!open)} placeholder='Post'/>
-          <button  type="submit">Send</button>
+          <input type="text"  style={{ backgroundColor: "rgba(240, 234, 234, 0.986)"}} onClick={()=>setOpen(!open)} placeholder='Post'/>
+        
         </form>
       </div>
       </div>{

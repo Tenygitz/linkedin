@@ -17,7 +17,7 @@ function SignOut() {
         const auth = getAuth();
      signOut(auth).then(() => {
        // Sign-out successful.
-       navigate("/register")
+       navigate("/")
      }).catch((error) => {
        // An error happened.
      });}
