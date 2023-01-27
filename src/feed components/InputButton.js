@@ -4,7 +4,7 @@ import "./InputButton.css"
 function InputButton({Icon,title}) {
   return (
     <div className='InputButton'>
-      <Icon style={{color:"grey"}} />
+      <Icon  />
       <p>{title}</p>
     </div>
   )

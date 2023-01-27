@@ -107,3 +107,10 @@
 .Comment-infoItems>h5{
     color: rgba(95, 94, 94, 0.8);
 }
+.liked{
+    color:blue ;
+
+}
+.Unliked{
+    color: grey;
+}

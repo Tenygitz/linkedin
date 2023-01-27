@@ -29,4 +29,4 @@ On created post
 Logout
 * Click on Me with Photo on header.
 * pop up a card , where there is sign out button
-* click on sign out, it will redirect to 
+* click on sign out, it will redirect to Login page

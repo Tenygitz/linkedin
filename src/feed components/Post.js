@@ -2,7 +2,7 @@ import { Avatar } from '@mui/material';
 import React,{forwardRef,useState,useEffect} from 'react';
 import {useSelector} from"react-redux";
 import InputButton from './InputButton';
-import { collection,addDoc ,orderBy,serverTimestamp, query, onSnapshot,deleteDoc} from "firebase/firestore";
+import { collection,addDoc ,orderBy,serverTimestamp, query,setDoc,doc, onSnapshot,deleteDoc} from "firebase/firestore";
 import { db } from '../firebase';
 import Moment from 'react-moment';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
@@ -15,7 +15,7 @@ import "./Post.css";
 
 const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},ref) =>{
   const {user}=useSelector((state)=>state.user)
-  const [Tlikes,SetTLikes] =useState([])
+  const [likes,SetLikes] =useState([])
   const [isLikes,SetIsLikes] =useState(false)
   const [commend,SetCommend] =useState(false)
   const [commendValue,setCommendValue]=useState([])
@@ -38,27 +38,29 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
      query(
        collection(db,"posts",id,"likes")
      ),
-     (snapshot)=>SetTLikes(snapshot.docs)
+     (snapshot)=>SetLikes(snapshot.docs)
   ),
  [db,id])
 
- useEffect(() => {
+ useEffect(() => (
   SetIsLikes(
-    Tlikes.findIndex((like)=>like.id===user?.uid) !== -1)
-    console.log("users uid",user.uid)
- },
+    likes.findIndex((like)=>like.id===user?.uid) !== -1)
+    
+ ), 
 
-[Tlikes])
+[likes])
+
+
 
   const likeHandler=async()=>{
     if(isLikes){
-       await deleteDoc(collection(db, "posts",id,"likes"))
+       await deleteDoc(collection(db, "posts",id,"likes",user.uid))
     }else{
-    const docRef = await addDoc(collection(db, "posts",id,"likes"),{
+    await setDoc(doc(db, "posts",id,"likes",user.uid),{
       name,
     })
-    SetIsLikes(!isLikes)
-     
+  
+ 
 }
   }
   const commentHandler=()=>{
@@ -81,8 +83,9 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
      console.log("eeeee",docRef.id);
   }
   console.log("haslked",isLikes)
-  console.log("likes",Tlikes)
+  console.log("likes",likes)
   console.log("commeds",commendValue)
+
   return (
     <div ref={ref} key={id} className='Post'>
         <div className='post-header'>
@@ -107,15 +110,15 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
             <div className="post-buttonNumbers">
               <div className='post-buttonLikes'>
              <ThumbUpIcon className='LikesButton' />
-             <span>{Tlikes.length} People liked</span></div>
+             <span>{likes.length} People liked</span></div>
              <div  className='post-buttons'>
               <p>{commendValue.length} commets</p>
              </div>
             </div>
             <hr/>
             <div className="post-button">
-              <div onClick={likeHandler} >
-                <InputButton  style={{ backgroundColor: isLikes && 'blue' }} Icon={ThumbUpIcon} title="Likes"/></div>
+              <div onClick={likeHandler} className={isLikes ? 'liked' : 'unliked'} >
+                <InputButton className="post-likesbtn" Icon={ThumbUpIcon} title="Likes"/></div>
                 <div onClick={commentHandler} className="Comments-button">
                 <InputButton Icon={MessageIcon} title="Comment"/></div>
                 <InputButton Icon={ScreenShareIcon} title="Share"/>
