@@ -27,7 +27,8 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
   useEffect(() => 
    onSnapshot(
       query(
-        collection(db,"posts",id,"comments")
+        collection(db,"posts",id,"comments"),
+        orderBy("timestamp","desc")
       ),
       (snapshot)=>setCommendValue(snapshot.docs)
    ),

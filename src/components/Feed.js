@@ -27,7 +27,7 @@ function Feed() {
   useEffect(() => {
     const fetchData = async () => {
       const querySnapshot = await getDocs(collection(db, "posts"),
-      orderBy("timestamp","dec"));
+      orderBy("timestamp","desc"));
       querySnapshot.forEach((doc) =>
       
         setPosts(prevPosts => [...prevPosts, { id: doc.id, data: doc.data() }])

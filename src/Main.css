@@ -1,6 +1,6 @@
 .Main-body{
     display: flex;
     background-color: rgba(240, 234, 234, 0.986);
-   justify-content: center;
-   padding-left: 100px;
+    justify-content: center;
+    padding-left: 100px;
 }
