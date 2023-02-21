@@ -12,8 +12,6 @@ import AppsIcon from '@mui/icons-material/Apps';
 import SignOut from './SignOut';
 import "./Header.css";
 
-
-
 function Header() {
   const {user}=useSelector((state)=>state.user)
   const [open,setOpen]=useState(false)

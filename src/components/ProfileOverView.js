@@ -3,17 +3,14 @@ import DoneIcon from '@mui/icons-material/Done';
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-
-
-
-import "./ProfileOverView.css";
 import OverViewPost from './OverViewPost';
+import "./ProfileOverView.css";
 
 function ProfileOverView() {
   return (
     <div className='ProfileOverView'>
          <div className='ProfileOverView-top'>
-            <img className="overview-img"src="https://media.licdn.com/dms/image/D563DAQGy_NE7GW_OlQ/image-scale_191_1128/0/1668261286707?e=1675076400&v=beta&t=o4UxJNnZkEteyYT0ZVznF0Yi0_vsAV83Dmi-yM8OieM" alt="banner-photo"/>
+            <img className="overview-img"src="https://media.licdn.com/dms/image/D563DAQGy_NE7GW_OlQ/image-scale_191_1128/0/1668261286707?e=1677067200&v=beta&t=YluJ-elGD8X6DrLh9ON6L0Cs32J0z2KvNh6AhzBkQ9Q" alt="banner-photo"/>
             <div className="ProfileOverView-info">
               <img className="overview-logo" src="https://media.licdn.com/dms/image/C4D0BAQHLBCHNE6MdhQ/company-logo_200_200/0/1622469165950?e=1682553600&v=beta&t=Vds13D4pD9DaNN--LC5GA-elm2MdsmCBIVsguzYV_yE" />
               <h1>TGH Tech</h1>

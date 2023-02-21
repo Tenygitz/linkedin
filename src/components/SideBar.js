@@ -1,22 +1,16 @@
 import { Avatar } from '@mui/material';
-import React from 'react';
+import React  from 'react';
 import {useSelector} from"react-redux";
 import { useNavigate } from 'react-router-dom';
+import AddIcon from '@mui/icons-material/Add';
 import "./SideBar.css"
 
 function SideBar() {
   const {user}=useSelector((state)=>state.user)
+  
   const navigate=useNavigate()
   console.log("ffffff",user?.photoURL);
 
-  const recentItem=(topic)=>(
-    <div className='sideBar-recentItem'>
-      <span className='sideBar-hash'>#</span>
-      <p>{topic}</p>
-    </div>
-  )
-
-  
   return (
     <div className='SideBar'>
       <div className="SideBar-top">
@@ -36,13 +30,14 @@ function SideBar() {
         </div>
       </div>
       <div className='sideBar-bottom'>
-        <p>Recent</p>
-        {recentItem("Reactjs ")}
-        {recentItem("Next js")}
-        {recentItem("Redux Toolkit")}
-        {recentItem("Webpack")}
-        {recentItem("Scss")}
-        {recentItem("Tailwind css")}
+        <h4>Groups</h4>
+        <div className="eventIcon">
+        <h4>Events</h4>
+        <AddIcon className="addIcon"/>
+        </div>
+        <h4>Followed Hashtags</h4>
+        <hr/>
+        <p>Discover more</p>
       </div>
     </div>
   )

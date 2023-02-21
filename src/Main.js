@@ -6,12 +6,13 @@ import Widget from './components/Widget';
 import "./Main.css"
 
 function Main() {
+
   return (
     <div>
       <Header/>
       <div className="Main-body">
       <SideBar/>
-      <Feed/>
+      <Feed />
       <Widget/>
     </div>
     </div>

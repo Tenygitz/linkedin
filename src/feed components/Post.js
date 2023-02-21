@@ -10,13 +10,15 @@ import MessageIcon from '@mui/icons-material/Message';
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import SendIcon from '@mui/icons-material/Send';
 import { useNavigate } from 'react-router-dom';
-
+import PostOverView from './PostOverView';
 import "./Post.css";
 
 const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},ref) =>{
   const {user}=useSelector((state)=>state.user)
-  const [likes,SetLikes] =useState([])
-  const [isLikes,SetIsLikes] =useState(false)
+  const [likes,setLikes] =useState([])
+  const [isLikes,setIsLikes] =useState(false)
+  const [open,setOpen]=useState(false)
+  const [show,setShow] =useState(false)
   const [commend,SetCommend] =useState(false)
   const [commendValue,setCommendValue]=useState([])
   const [inputCommend,setInputCommend]= useState("")
@@ -39,30 +41,31 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
      query(
        collection(db,"posts",id,"likes")
      ),
-     (snapshot)=>SetLikes(snapshot.docs)
+     (snapshot)=>setLikes(snapshot.docs)
   ),
  [db,id])
 
- useEffect(() => (
-  SetIsLikes(
+ useEffect(() => (                //ckecking if the person also already liked the post
+  setIsLikes(
     likes.findIndex((like)=>like.id===user?.uid) !== -1)
     
  ), 
 
 [likes])
 
-
+  const truncate=(string,n)=>
+   string?.length>n? string.substr(0,n-1)+" ..See more ":string;
+  
 
   const likeHandler=async()=>{
     if(isLikes){
-       await deleteDoc(collection(db, "posts",id,"likes",user.uid))
+       await deleteDoc(doc(db, "posts",id,"likes",user.uid)) // delete the like from db 
     }else{
     await setDoc(doc(db, "posts",id,"likes",user.uid),{
-      name,
+      name:user.displayName,
     })
-  
- 
-}
+
+ }
   }
   const commentHandler=()=>{
   SetCommend(true)
@@ -100,14 +103,17 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
             </div>
         </div>
         <div className="post-body">
-            <p>{message}</p> 
+            <p onClick={()=>setShow(true)}>{truncate(message,150)}</p> 
             {  images?(  
-             <img src={images} alt="images"/>):null
+             <img onClick={()=>setOpen(!open)} src={images} alt="images"/>):null
              }
              { video? (
              <video controls autoPlay={false} src={video} alt="video"  />):null
             }
             </div>
+            {
+              open && <PostOverView id={id} name={name} describe={describe} message={message} photo={photo} images={images} video={video} timestamp={timestamp} setOpen={setOpen} likes={likes} isLikes={isLikes} likeHandler={likeHandler} onSubmitCommend={onSubmitCommend} setInputCommend={setInputCommend} commendValue={commendValue} inputCommend={inputCommend} />
+            }
             <div className="post-buttonNumbers">
               <div className='post-buttonLikes'>
              <ThumbUpIcon className='LikesButton' />
@@ -133,7 +139,7 @@ const Post= forwardRef(({id,name,describe,message,photo,images,video,timestamp},
               </form>
               </div>
               { commendValue.length>0 && commendValue.map((item)=>(<div key={item.id} className='Comment-info'>
-               <Avatar   src={item.data().photo}></Avatar>
+               <Avatar src={item.data().photo}></Avatar>
                <div className='Comment-infoContainer'>
               <div className='Comment-infoItems'>
                 <h3>{item.data().name}</h3>

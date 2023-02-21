@@ -62,23 +62,38 @@
     text-align: left;
     border: 1px solid lightgray;
     margin-top: 10px;
-    padding: 10px;
     background-color: white;
     border-radius: 10px;
     margin-bottom: 10px;
-}
-.sideBar-recentItem{
-    display: flex;  
-    color: grey;
-    font-weight: bolder;
     cursor: pointer;
-    padding: 5px;
 }
-.sideBar-recentItem:hover{
+
+.eventIcon{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sideBar-bottom h4{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    color: #0a66c2;
+}
+.sideBar-bottom>h4:hover{
+    text-decoration: underline;
+}
+.addIcon{
     color: black;
-    background-color: whitesmoke;
-    border-radius: 10px;
 }
 .sideBar-bottom>p{
-    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: rgb(145, 145, 145);
+    text-align: center;
+    font-weight: 600;
+}
+.sideBar-bottom>p:hover{
+    background-color: whitesmoke;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
 }

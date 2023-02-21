@@ -25,7 +25,7 @@ function OverViewPost() {
          <MoreHorizIcon style={{marginRight:"20px"}}/>
     </div>
     <p style={{padding:"10px"}}>With a little help from Rahul R S, our creative lead, we’ve curated a list of websites that woul</p>
-    <img src="https://media.licdn.com/dms/image/C561FAQEk0MblGflD3w/feedshare-document-cover-images_480/0/1674458684900?e=1675159200&v=beta&t=GpILJUDPvZSPjfGfzluYk_81tpyiIOURdSJ6GfjpV74" />
+    <img src="https://media.licdn.com/dms/image/D5612AQEgdD0c0pGOyA/article-cover_image-shrink_600_2000/0/1673952537323?e=1681948800&v=beta&t=PjQ_VcPmINqmOgIfFwCD_HAr96kSKMURQvFUUf-Ohug" />
     <div className='comment-likes'>
     <ThumbUpIcon className='LikesButton'/><p>17.1 comment</p>
     </div>
