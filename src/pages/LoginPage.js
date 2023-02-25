@@ -20,7 +20,7 @@ function LoginPage() {
           <PeopleAltIcon className="nav-icons"/>
             <h1>People</h1>
         </div>
-        <div className='nav-icon'>
+        <div className='nav-icon1'>
           <CastForEducationIcon className="nav-icons"/>
             <h1>Learning</h1>
         </div>

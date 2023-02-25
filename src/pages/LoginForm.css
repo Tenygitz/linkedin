@@ -2,19 +2,42 @@
     display: flex;
     justify-content: space-around;
 }
+@media screen and (max-width:767px){
+    .LoginForm{
+      margin-top: 20px;
+    }
+}
 .loginform-img>img{
     width: 100%;
     height: 500px;
     object-fit: cover;
 }
+@media screen and (max-width:767px){
+    .loginform-img>img{
+        width: 100%;
+        height: 370px;
+        object-fit: cover;
+    }
+}
 .loginform-input>h1{
     font-size: 52px;
     font-weight: 200;
     color:#8f5849;
-
+}
+@media screen and (max-width:767px){
+    .loginform-input>h1{
+        font-size: 30px;
+    
+    }
 }
 .loginform-input{
     margin-left: 100px;
+}
+@media screen and (max-width:767px){
+    .loginform-input{
+        margin-left: 10px;
+        margin-right: 5px;
+    }
 }
 .forms{
     display: flex;
@@ -26,7 +49,6 @@
     padding: 10px 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-
 }
 .forms>button{
     padding: 20px 20px;
@@ -38,6 +60,13 @@
     margin-top: 20px;
 
 }
+@media screen and (max-width:767px){
+    .forms>button{
+        padding: 15px 20px;
+        font-size: 20px;
+        margin-top: 15px;
+    
+    }}
 .loginform-input>h4{
     margin-left: 50px;
     margin-top: 5px;

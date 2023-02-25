@@ -11,6 +11,11 @@
     align-items: center;
     justify-content: center; 
 }
+@media screen and (max-width:767px) {
+    .PostOverView{
+      display: none;
+    }
+}
 .PostOverView-container{
         background-color: white;
         width: 1100px;

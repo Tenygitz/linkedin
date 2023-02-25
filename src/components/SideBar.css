@@ -7,6 +7,14 @@
      border-radius: 10px;
      margin-top: 20px;
 }
+@media screen and (max-width:767px) {
+    .SideBar{
+         position: static;
+         text-align: center;
+         border-radius: 10px;
+         margin-top: 20px;
+    }
+}
 .sideBar-avatar{
     margin-bottom: 10px;
 }
@@ -67,7 +75,11 @@
     margin-bottom: 10px;
     cursor: pointer;
 }
-
+@media screen and (max-width:767px) {
+    .sideBar-bottom{
+        display: none;
+    }
+}
 .eventIcon{
     display:flex;
     justify-content: space-between;

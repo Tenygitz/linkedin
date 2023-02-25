@@ -10,6 +10,12 @@
     padding: 10px;
     height: 300px;
 }
+@media screen and (max-width:767px) {
+    .widget-Head{
+       max-width:390px;
+       
+    }
+}
 .widget-Header{
     display: flex;
     justify-content: space-between;
@@ -63,8 +69,14 @@
     top:10px;
     max-width: 300px;
     height: 300px;
-   
-    
+
+}
+@media screen and (max-width:767px) {
+    .Widget-img{
+        max-width: 390px; 
+        position: static;
+       
+    }    
 }
 .Widget-img>img{
     width: 100%;

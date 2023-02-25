@@ -1,6 +1,11 @@
 .HeaderOptions>h1 {
     font-size: 18px;
 }
+@media screen and (max-width:767px) {
+    .HeaderOptions>h1 {
+        display: none;
+    }
+}
 .HeaderOptions{
     display: flex;
     flex-direction: column;

@@ -11,6 +11,12 @@
     align-items: center;
     justify-content: center; 
 }
+@media screen and (max-width:767px) {
+    .CreatePost{
+        position: fixed;
+        bottom: 170px;
+    }
+}
 .createpost-container{
         background-color: white;
         width: 500px;
@@ -19,6 +25,13 @@
         border-radius: 10px;
         padding: 20px;
         flex-direction: column;
+}
+@media screen and (max-width:767px) {
+    .createpost-container{
+        background-color: white;
+        width: 350px;
+        height: 400px;
+}
 }
 .createpost-head{
     display: flex;

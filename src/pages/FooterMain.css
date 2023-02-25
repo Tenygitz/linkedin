@@ -9,6 +9,10 @@ li{
     
 }
 @media screen and (max-width:767px){
+.FooterMain{
+    display: none;
+}}
+@media screen and (max-width:767px){
     .footerMain{
         height:130vh;
       

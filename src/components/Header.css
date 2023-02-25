@@ -6,6 +6,12 @@
     padding-bottom: 10px;
     margin-right: 100px;
 }
+@media screen and (max-width:767px) {
+    .header{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
 .header-left{
     display: flex;
    }
@@ -24,6 +30,11 @@
     border-radius: 5px;
     color: grey;
 }
+@media screen and (max-width:767px) {
+    .searchbar{
+        display: none;
+    } 
+}
 .searchbar>input{
     border: none;
     background-color: #eef3f8;
@@ -33,6 +44,13 @@
 .header-middle{
     display: flex;
     margin-left: 70px;
+}
+@media screen and (max-width:767px) {
+    .header-middle{
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .work{
     display: flex;
@@ -46,6 +64,11 @@
     align-items: center;
     margin-left: 50px;
 }
+@media screen and (max-width:767px) {
+    .header-right{
+        display: none;
+       
+}}
 .work>h1{
     font-size: 20px;
 }

@@ -18,7 +18,7 @@ creating a post
 * you see blank page , refresh the page , you will see the created post on homepage
 
 On created post
-* You like the post by clicking  like button
+* You can like and unlike the post by clicking  like button
 * you can comment on the post by clicking on comment button
 * input box will appear to type comments
 * on video upload play and pause option.
@@ -26,6 +26,9 @@ On created post
 * click on your profile pic on the post . to overview your profile .it will redirect any page (layout similar to linkedin)
 * click on Home button on header to redirect to homepage
  
+postOverview
+* on click on post images for popup of the Overview.
+
 Logout
 * Click on Me with Photo on header.
 * pop up a card , where there is sign out button
