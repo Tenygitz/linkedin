@@ -1,4 +1,13 @@
 
+<<<<<<< HEAD
+=======
+https://user-images.githubusercontent.com/89390819/222881681-9cd66632-5f7a-4bea-836a-d69211e698f9.mp4
+
+Website Preview Video
+
+Built using React JS, Redux, Firebase, Responsive on mobile , Newsapi integrated,Material ui icon ,
+
+>>>>>>> 32d54cbc266594dbcabed1e88907149bc8cfac8c
 # Login page:
 
 * sign up to the page with email and password .
