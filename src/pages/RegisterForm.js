@@ -16,10 +16,14 @@ function RegisterForm() {
   const dispatch=useDispatch()
   const navigate=useNavigate()
   const [displayName,setdisplayName]=useState("")
+  const [nameError, setNameError] = useState('');
   const [email,setEmail]=useState("")
+  const [emailError, setEmailError] = useState('');
   const [phone,setPhone]=useState("")
-  const[password,setPassword]=useState("")
-  const[upload,setUpload]=useState(null)
+  const [phoneError, setPhoneError] = useState('');
+  const [password,setPassword]=useState("")
+  const [passwordError, setPasswordError] = useState('');
+  const [upload,setUpload]=useState(null)
   console.log("files ",upload)
    const registerHandler=async(e)=>{
     e.preventDefault()
@@ -60,23 +64,46 @@ function RegisterForm() {
   
     }
   };
+
   return (<><LoginPage/>
     <div className='SignUpPage'>
-    <img className='LoginPage-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png' alt="linkdinlogo" />
     <div className='Signup-container'>
         <h1>Create Account</h1>
-        <form>
+        <form className='forminput'>
             <h4>Your name</h4>
-            <input type="text" onChange={(e)=>setdisplayName(e.target.value)} placeholder='Your name' required/>
+            <input type="text" onChange={(e)=>{setdisplayName(e.target.value);if (!e.target.validity.valid) {
+    setNameError('Username should be 3-8 characters and should not include any special character');
+  } else {
+    setNameError('')}
+  }} placeholder='Your name' required pattern="^[A-Za-z0-9]{3,8}$"  autoComplete="off"/>
+            { nameError && <span>{nameError}</span> }
+            
             <h4>Mobile number</h4>
-            <input  type="number"onChange={(e)=>setPhone(e.target.value)} placeholder='Your Phone Number'required/>
+            <input  type="tel"onChange={(e)=>{setPhone(e.target.value);if (!e.target.validity.valid) {
+    setPhoneError('number should contain 10 numbers');
+  } else {
+    setPhoneError('')}
+  }} placeholder='Your Phone Number'required pattern="[0-9]{10}" autoComplete="off"/>
+            { phoneError && <span>{phoneError}</span> }
             <h4>Email</h4>
-            <input   type="email"onChange={(e)=>setEmail(e.target.value)}  placeholder='Your email'required/>
+            <input   type="email"onChange={(e)=>{setEmail(e.target.value);if (!e.target.validity.valid) {
+    setEmailError('It should be a valid email address');
+  } else {
+    setEmailError('')}
+  }}  placeholder='Your email' required autoComplete="off"/>
+             { emailError && <span>{emailError}</span> }
+
             <h4>Upload File</h4>
-            <input type="file"  onChange={(e)=>setUpload(e.target.files[0])} required/>
+            <input type="file"  onChange={(e)=>setUpload(e.target.files[0])} required autoComplete="off"/>
+            <span>Please upload the Profile picture</span>
             <h4>Password</h4>
-            <input  type="password"onChange={(e)=>setPassword(e.target.value)}  placeholder='******'required/>
-            <button onClick={registerHandler} type="submit">Sign In</button>
+            <input  type="password"onChange={(e)=>{setPassword(e.target.value);if (!e.target.validity.valid) {
+    setPasswordError('Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!');
+  } else {
+    setPasswordError('')}
+  }} placeholder='******'required pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$" autoComplete="off"/>
+               { passwordError && <span>{passwordError}</span> }
+            <button disabled={nameError || phoneError || emailError || passwordError} onClick={registerHandler} type="submit">Sign In</button>
         </form>
     </div>
     </div>

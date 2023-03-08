@@ -1,8 +1,9 @@
 .SignUpPage{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .LoginPage-logo{
     width: 100%;
@@ -25,7 +26,6 @@
 }
 .Signup-container{
     width: 300px;
-    height: 67vh;
     border: 1px solid grey;
     padding: 20px;
     background-color: whitesmoke;
@@ -36,7 +36,6 @@
     .Signup-container {
         width: 250px;
         padding: 20px;
-        height: 55vh;
     }
 }
 .Signup-container>form>h4{
@@ -81,4 +80,11 @@
         margin-bottom: 10px;
         font-size: 26px;
     }
+}
+.forminput>span{
+    display:none ;
+    color:red
+}
+input:invalid~span{
+    display: block;
 }
